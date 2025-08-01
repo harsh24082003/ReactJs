@@ -9,7 +9,7 @@ import Home from './components/Home/Home.jsx'
 import Contact from './components/Contact/Contact.jsx'
 import User from './components/User/User.jsx'
 import { Route } from 'react-router-dom'
-import Github from './components/Github/Github.jsx'
+import Github, { githubInfoLoader } from './components/Github/Github.jsx'
 
 //How to create a router, there are two ways to do it, which are following
 // const router = createBrowserRouter([
@@ -42,7 +42,9 @@ const router= createBrowserRouter(
       <Route path="about" element={<About/>}/>
       <Route path="contact" element={<Contact/>}/>
       <Route path="user/:id" element={<User/>}/>
-      <Route path="github" element={<Github/>}/>
+      <Route
+      loader={githubInfoLoader} 
+      path="github" element={<Github/>}/>
     </Route>
 
   )
